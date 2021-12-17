@@ -66,7 +66,7 @@ You can use whichever programming language you are comfortable with
 
 #### Goal
 
-The goal is to create a program that will iterate over these `50 pages` of the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) - http://books.toscrape.com/catalogue/category/books_1/page-1.html to http://books.toscrape.com/catalogue/category/books_1/page-50.html and for each found book add a record to the `csv`. The detailed information that we are looking for can only be found on the specific page for the book so you'll need to load them too!. At the end of the program save the `generated csv` into `result.csv` at the `CWD` (current working directory).
+The goal is to create a program that will iterate over these `50 pages` of the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) - http://books.toscrape.com/catalogue/category/books_1/page-1.html to http://books.toscrape.com/catalogue/category/books_1/page-50.html and for each found book add a record to the `csv`. The detailed information that we are looking for can only be found on the specific page for the book so you'll need to load them too!. At the end of the program save the `generated csv` into `result.csv` at the `CWD` (current working directory). The site contains `1000` books so the `csv` is expected to have `1000` (or 1001 - if the header is included) `records` (rows).
 
 #### Q&As
 
