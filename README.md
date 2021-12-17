@@ -16,17 +16,33 @@ Source: https://en.wikipedia.org/wiki/Web_scraping
 
 For this exercise you'll have to scrape the contents of special website designed as a web-scraping sandbox: [books.toscrape.com](http://books.toscrape.com/).
 
-Create a `program` (project, script) that will create a [csv](https://en.wikipedia.org/wiki/Comma-separated_values) with the following information about each book found on the [store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html).
+#### You can use whichever programming language you are comfortable with! 
 
----
+The goal is to create a `program` (project, script) that will generate a [csv](https://en.wikipedia.org/wiki/Comma-separated_values) with the information about each book that can be found on the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html).
 
+For each book you have to extract the following information.
+
+```csv
 title, upc, type, price, availability, reviews, description 
+```
 
 ---
 
-> price - including tax
+Take a look at this eaxmple book [Bright Lines](http://books.toscrape.com/catalogue/bright-lines_11/index.html)
+
+> title - the title of the book
+> 
+> upc - the upc of the book
+> 
+> type - the type of the product
+> 
+> price - the price of the book including tax
 > 
 > availability - count of available books
+> 
+> reviews - count of reviews
+> 
+> description - the description of the book
 
 You can find `this information` for each book when you open the specific link to that book.
 
@@ -45,12 +61,12 @@ For this specific book the values are as follows:
 - `availability` - 1
 - `reviews` - 0
 - `description` - A vibrant debut novel...
-
+You can use whichever programming language you are comfortable with
 > Important: the `description` may contain `,` (comma) which will break the csv. You can replace them with a character (like `^`) to keep workaround it
 
 #### Goal
 
-The main goal is to create a program that will iterate over these `50 pages` of the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) and for each found book (you might have to scrape each page independently) add a record to the `csv`. At the end of the iteration save the result csv into `result.csv` at the `CWD`.
+The goal is to create a program that will iterate over these `50 pages` of the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) - http://books.toscrape.com/catalogue/category/books_1/page-1.html to http://books.toscrape.com/catalogue/category/books_1/page-50.html and for each found book add a record to the `csv`. The detailed information that we are looking for can only be found on the specific page for the book so you'll need to load them too!. At the end of the program save the `generated csv` into `result.csv` at the `CWD` (current working directory).
 
 #### Q&As
 
