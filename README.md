@@ -4,7 +4,7 @@ This repository contains exercises that will be used to evaluate the skills of p
 
 ## Exercises 📝
 
-- [Exercise 01](exercise-01)
+- [Exercise 01](#exercise-01)
 
 ## Exercise 01
 
