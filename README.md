@@ -26,7 +26,7 @@ title, upc, type, price, availability, reviews, description
 
 > price - including tax
 > 
-> availability - count of avilable books
+> availability - count of available books
 
 You can find `this information` for each book when you open the specific link to that book.
 
