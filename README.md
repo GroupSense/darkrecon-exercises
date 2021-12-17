@@ -79,7 +79,7 @@ You can use whichever programming language you are comfortable with!
 The first and easiest way is to send an HTTP (`get`) request to the site.
 
 ```bash
-# bash
+# bash - this is just for example. You don't have to do the program in bash. You can use other http clients to simulate the same thing - like `postman`
 curl http://books.toscrape.com/catalogue/bright-lines_11/index.html
 ```
 
