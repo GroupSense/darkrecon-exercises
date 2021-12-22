@@ -30,8 +30,8 @@ the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/in
 
 You have to `iterate over` each `page` from the `book catalog` starting from 
 [page-1](http://books.toscrape.com/catalogue/category/books_1/index.html), 
-[page-2](http://books.toscrape.com/catalogue/category/books_2/index.html), ..., 
-[page-50](http://books.toscrape.com/catalogue/category/books_50/index.html). On each of those pages you will see a list
+[page-2](http://books.toscrape.com/catalogue/category/books_1/page-2.html), ..., 
+[page-50](http://books.toscrape.com/catalogue/category/books_1/page-50.html). On each of those pages you will see a list
 of books - each with an `unique link`. When you `open` those `links` you will see more `detailed information` about each
 book. From this information you need to `extract` the following information and store it in the csv.
 
