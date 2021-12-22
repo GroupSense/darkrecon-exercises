@@ -1,6 +1,7 @@
 # darkrecon-exercises
 
-This repository contains exercises that will be used to evaluate the skills of potential engineers for the `darkrecon` team.
+This repository contains exercises that will be used to evaluate the skills of potential engineers for the `darkrecon` 
+team.
 
 ## Exercises 📝
 
@@ -8,67 +9,72 @@ This repository contains exercises that will be used to evaluate the skills of p
 
 ## Exercise 01
 
-#### Intro
+### Intro
 
-Web scraping is the process of automating data collection from the web. The web scraping software may directly access the `World Wide Web` using the `Hypertext Transfer Protocol` or a `web browser`. While web scraping can be done manually by a software user, the term typically refers to `automated processes` implemented using a `bot` or `web crawler`. It is a form of copying in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later `retrieval` or `analysis`.
+Web scraping is the process of automating data collection from the web. The web scraping software may directly access 
+the `World Wide Web` using the `Hypertext Transfer Protocol` or a `web browser`. While web scraping can be done manually 
+by a software user, the term typically refers to `automated processes` implemented using a `bot` or `web crawler`. It is 
+a form of copying in which specific data is gathered and copied from the web, typically into a central local database or 
+spreadsheet, for later `retrieval` or `analysis`.
 
-Source: https://en.wikipedia.org/wiki/Web_scraping
+> Source: https://en.wikipedia.org/wiki/Web_scraping
 
-For this exercise you'll have to scrape the contents of special website designed as a web-scraping sandbox: [books.toscrape.com](http://books.toscrape.com/).
+For this exercise you'll have crate a program that will scrape the contents of special website designed as a 
+web-scraping sandbox: [books.toscrape.com](http://books.toscrape.com/).
 
-#### You can use whichever programming language you are comfortable with! 
+### Important: You can use whichever programming language you are comfortable with to do the job! 
 
-The goal is to create a `program` (project, script) that will generate a [csv](https://en.wikipedia.org/wiki/Comma-separated_values) with the information about each book that can be found on the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html).
+The goal is to create a small `project` (a scraper) that will generate a 
+[csv](https://en.wikipedia.org/wiki/Comma-separated_values) with the information about each book that can be found on 
+the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html).
 
-For each book you have to extract the following information.
+You have to `iterate over` each `page` from the `book catalog` starting from 
+[page-1](http://books.toscrape.com/catalogue/category/books_1/index.html), 
+[page-2](http://books.toscrape.com/catalogue/category/books_2/index.html), ..., 
+[page-50](http://books.toscrape.com/catalogue/category/books_50/index.html). On each of those pages you will see a list
+of books - each with an `unique link`. When you `open` those `links` you will see more `detailed information` about each
+book. From this information you need to `extract` the following information and store it in the csv.
 
 ```csv
 title, upc, type, price, availability, reviews, description 
 ```
 
----
+### Description of the fields
 
-Take a look at this eaxmple book [Bright Lines](http://books.toscrape.com/catalogue/bright-lines_11/index.html)
+| Field Name   | Description                         |
+|--------------|-------------------------------------|
+| title        | the title of the book               |
+| upc          | the upc of the book                 |
+| type         | the type of the product             |
+| price        | the price of the book including tax |
+| availability | count of available books            |
+| reviews      | count of reviews                    |
+| description  | the description of the book         |
 
-> title - the title of the book
-> 
-> upc - the upc of the book
-> 
-> type - the type of the product
-> 
-> price - the price of the book including tax
-> 
-> availability - count of available books
-> 
-> reviews - count of reviews
-> 
-> description - the description of the book
+For reference the following table contains the information of a specific book - 
+[Bright Lines](http://books.toscrape.com/catalogue/bright-lines_11/index.html)
 
-You can find `this information` for each book when you open the specific link to that book.
+> This book can be found on page 50 - http://books.toscrape.com/catalogue/category/books_1/page-50.html
 
-#### Example
+| Field Name   | Value                                    |
+|--------------|------------------------------------------|
+| title        | Bright Lines                             |
+| upc          | 230ac636ea0ea415                         |
+| type         | Books                                    |
+| price        | 39.07                                    |
+| availability | 1                                        |
+| reviews      | 0                                        |
+| description  | A vibrant debut novel... (it continuous) |
 
-On each page of the book [store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) you can see a list of `books`. If you go on the [next page](http://books.toscrape.com/catalogue/category/books_1/page-2.html) you can find more books! The catalog has a total of [50](http://books.toscrape.com/catalogue/category/books_1/page-50.html) pages.
-
-If you go to a random page - for example `50` of the book catalog: http://books.toscrape.com/catalogue/category/books_1/page-50.html one of the books there is [Bright Lines](http://books.toscrape.com/catalogue/bright-lines_11/index.html)
-
-For this specific book the values are as follows:
-
-- `title` - Bright Lines
-- `upc` - 230ac636ea0ea415
-- `type` - Books
-- `price` - 39.07
-- `availability` - 1
-- `reviews` - 0
-- `description` - A vibrant debut novel...
-You can use whichever programming language you are comfortable with
 > Important: the `description` may contain `,` (comma) which will break the csv. You can replace them with a character (like `^`) to keep workaround it
 
-#### Goal
+### End goal
 
-The goal is to create a program that will iterate over these `50 pages` of the [book store catalog](http://books.toscrape.com/catalogue/category/books_1/index.html) - http://books.toscrape.com/catalogue/category/books_1/page-1.html to http://books.toscrape.com/catalogue/category/books_1/page-50.html and for each found book add a record to the `csv`. The detailed information that we are looking for can only be found on the specific page for the book so you'll need to load them too!. At the end of the program save the `generated csv` into `result.csv` at the `CWD` (current working directory). The site contains `1000` books so the `csv` is expected to have `1000` (or 1001 - if the header is included) `records` (rows).
+The site contains `1000` books so the `csv` is expected to have `1000` (or `1001` - if the header is included) `records` 
+(rows). You should save the generated `csv` to a local file named `report.csv` in the `current working directory` (CWD) 
+of your main process.
 
-#### Q&As
+### Q&As
 
 ##### What programming language should I use?
 
